@@ -1,9 +1,6 @@
 export default function (students) {
-  const studentId = [];
-  for (const student of students) {
-    if (student.id) {
-      studentId.push(student.id);
-    }
+  if (Array.isArray(students)) {
+    return students.map((student) => student.id);
   }
-  return studentId;
+  return [];
 }
