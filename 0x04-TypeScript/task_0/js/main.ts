@@ -5,43 +5,40 @@ interface Student {
   location: string;
 }
 
-let student1: Student = {
+const student1: Student = {
   firstName: 'John',
   lastName: 'One',
   age: 15,
-  location: 'Nigeria'
+  location: 'Nigeria',
 };
 
-let student2: Student = {
+const student2: Student = {
   firstName: 'Adam',
   lastName: 'Two',
   age: 35,
-  location: 'Outside'
+  location: 'Outside',
 };
 
-let studentsList: Student[] = [
+const studentsList: Student[] = [
   student1,
-  student2
+  student2,
 ];
 
-function renderTable() {
-  let tableBody = document.querySelector("#myTable tbody");
+document.addEventListener('DOMContentLoaded', () => {
+  // Create a new table element
+  const table = document.createElement('table');
 
-  tableBody.innerHTML = "";
+  // Create table rows and cells
+  for (const student of studentsList) {
+    const row = table.insertRow();
 
-  studentsList.forEach(person => {
-    let row = document.createElement("tr");
+    const cellfn = row.insertCell();
+    cellfn.textContent = `${student.firstName}`;
 
-    let firstNameCell = document.createElement("td");
-    firstNameCell.textContent = person.firstName;
-    row.appendChild(firstNameCell);
+    const cellloc = row.insertCell();
+    cellloc.textContent = `${student.location}`;
+  }
 
-    let locationCell = document.createElement("td");
-    locationCell.textContent = person.location;
-    row.appendChild(locationCell);
-
-    tableBody.appendChild(row);
-  })
-}
-
-renderTable();
+  // Append the table to the body of the document
+  document.body.appendChild(table);
+});
