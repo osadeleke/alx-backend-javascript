@@ -21,11 +21,9 @@ describe('Divide', function () {
         const result = calculateNumber('DIVIDE', 1.4, 4.5);
         expect(result).to.equal(0.2);
     });
-});
 
-describe('Divide with 0 giving error', () => {
     it('should return Error because divisor is rounded up to zero (0)', function () {
         const result = calculateNumber('DIVIDE', 1.4, 0);
-        expect(result).to.equal(result, 'Error');
+        expect(result).to.equal('Error');
     });
 });
