@@ -5,11 +5,13 @@ export default function cleanSet(set, startString) {
   let finalString;
   const position = startString.length;
   set.forEach((value) => {
-    if (value.startsWith(startString)) {
-      if (finalString === undefined) {
-        finalString = value.slice(position);
-      } else {
-        finalString = `${finalString}-${value.slice(position)}`;
+    if (typeof value === 'string') {
+      if (value.startsWith(startString)) {
+        if (finalString === undefined) {
+          finalString = value.slice(position);
+        } else {
+          finalString = `${finalString}-${value.slice(position)}`;
+        }
       }
     }
   });
