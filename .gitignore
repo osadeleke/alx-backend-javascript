@@ -2,3 +2,4 @@ node_modules
 *.py
 __pycache__
 *.code-workspace
+dist
