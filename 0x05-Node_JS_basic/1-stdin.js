@@ -9,6 +9,5 @@ process.stdin.on('data', (data) => {
   if (!process.stdin.isTTY) {
     console.log(`Your name is: ${trimmedData}\r`);
     console.log('This important software is now closing');
-    process.exit(0);
   }
 });
